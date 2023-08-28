@@ -1,0 +1,108 @@
+/*header*/
+
+.w-100 {
+    width: 100%;
+}
+
+body {
+    background-color: rgb(15, 9, 19);
+    font-family: 'Overpass', sans-serif;
+}
+
+.header {
+    display: flex;
+    height: 130px;
+    background-color: rgb(0, 0, 1);
+}
+
+.verrecomendaciones {
+    margin-top: 30px;
+}
+
+.imagenesproveedores {
+    height: 150px;
+    width: 150px
+}
+
+
+
+.padre2_header {
+    width: 100%;
+    height: 100px;
+}
+
+.logo_header_article {
+    height: 100px;
+    width: 230px;
+}
+
+.logoheader {
+    width: 200px;
+    height: 85px;
+    text-align: left;
+    align-self: flex-start;
+    margin: 20px 5px 0px 10px;
+}
+
+.form_header {
+    height: 50px;
+    text-align: end;
+    margin-bottom: 20px;
+    padding: 10px 30px 0px 0px;
+}
+
+.inputform {
+    height: 30px;
+    width: 200px;
+    font-family: 'Overpass', sans-serif;
+}
+
+.botonform {
+    border-radius: 5px;
+    background-color: rgb(65, 11, 115);
+    color: white;
+    padding: 3px 5px;
+    margin: 5px 0px 0px 10px;
+    width: 100px;
+    height: 35px;
+    font-family: 'Overpass', sans-serif;
+}
+
+.listagenerospeliculas {
+    display: flex;
+}
+
+
+.nav_header {
+    /* padre_header(nav_header(lista_nav_header(linavheader)))*/
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(54, 7, 98);
+    align-self: flex-end;
+    /* */
+}
+
+.lista_nav_header {
+    width: 100%;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+    color: white;
+    padding: 0px;
+    font-size: 20px;
+    align-items: center;
+
+}
+
+.linavheader {
+    /* son las etiquetas <a> de los li de la barra de navegación del header*/
+    text-decoration: none;
+    color: white;
+}
+
+.img_search_result {
+
+    height: 250px;
+
+}

@@ -1,0 +1,852 @@
+/* LOADER DE CARGA*/
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader {
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 2, 8s ease-in-out;
+
+}
+
+
+/*   CSS del Index */
+
+
+/*header*/
+
+.w-100 {
+    width: 100%;
+}
+
+body {
+    background-color: rgb(15, 9, 19);
+    font-family: 'Overpass', sans-serif;
+}
+
+.header {
+    display: flex;
+    height: 130px;
+    background-color: rgb(0, 0, 1);
+}
+
+.verrecomendaciones {
+    margin-top: 30px;
+}
+
+.imagenesproveedores {
+    height: 150px;
+    width: 150px
+}
+
+
+
+.padre2_header {
+    width: 100%;
+    height: 100px;
+}
+
+.logo_header_article {
+    height: 100px;
+    width: 230px;
+}
+
+.logoheader {
+    width: 200px;
+    height: 85px;
+    text-align: left;
+    align-self: flex-start;
+    margin: 20px 5px 0px 10px;
+}
+
+.form_header {
+    height: 50px;
+    text-align: end;
+    margin-bottom: 20px;
+    padding: 10px 30px 0px 0px;
+}
+
+.inputform {
+    height: 30px;
+    width: 200px;
+    font-family: 'Overpass', sans-serif;
+}
+
+.botonform {
+    border-radius: 5px;
+    background-color: rgb(65, 11, 115);
+    color: white;
+    padding: 3px 5px;
+    margin: 5px 0px 0px 10px;
+    width: 100px;
+    height: 35px;
+    font-family: 'Overpass', sans-serif;
+}
+
+.listagenerospeliculas {
+    display: flex;
+}
+
+
+.nav_header {
+    /* padre_header(nav_header(lista_nav_header(linavheader)))*/
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(54, 7, 98);
+    align-self: flex-end;
+    /* */
+}
+
+.lista_nav_header {
+    width: 100%;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+    color: white;
+    padding: 0px;
+    font-size: 20px;
+    align-items: center;
+
+}
+
+.linavheader {
+    /* son las etiquetas <a> de los li de la barra de navegación del header*/
+    text-decoration: none;
+    color: white;
+}
+
+.img_search_result {
+
+    height: 250px;
+
+}
+
+
+/* main*/
+.seccion_foto_principal {
+    background-image: url(../img/fondo\ home\ mas\ oscura.png);
+    background-size: 1500px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
+    height: 550px;
+    width: 100%;
+    display: flex;
+}
+
+.h2_secciones {
+    font-size: 50px;
+    margin: 20px
+}
+
+.hijo_Seccion_foto_principal {
+    width: 700px;
+    align-self: center;
+    padding: 150px;
+}
+
+.texto_en_foto_principal {
+    color: white;
+    font-size: 60px;
+
+}
+
+
+.separador {
+    height: 50px;
+    background-color: rgb(54, 7, 98);
+}
+
+
+.seccion_peliculas {
+    height: 550px;
+}
+
+
+.h2_secciones {
+    color: white;
+}
+
+
+.seccion_series {
+    height: 600px;
+}
+
+
+.seccion_lo_mas_visto {
+    height: 600px;
+}
+
+.lista_plataformas {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.liproveedor {
+    margin: 25px;
+}
+
+.lista_principal {
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    width: 100%;
+    padding: 0px;
+    margin-top: 50px;
+}
+
+
+.li_piedefoto {
+    color: white;
+
+
+}
+
+.cada_titulo {
+    width: 16%;
+}
+
+
+.lista_anidada {
+    list-style-type: none;
+    padding: 0px;
+}
+
+.vermas {
+    background-color: rgb(54, 7, 98);
+    padding: 8px;
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.reviews {
+    color: white;
+}
+
+.titReviews {
+    color: white;
+    font-size: 30px;
+}
+
+
+
+
+
+
+
+/* Css detail-movie, series y generos */
+
+.titulod {
+    font-family: 'Raleway', sans-serif;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    background-color: rgba(54, 7, 98, 0.642);
+}
+
+.texto-d {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    color: white;
+    text-align: left;
+    display: flex;
+    width: 100%;
+
+
+}
+
+.img-detalle-titulos {
+    width: 400px;
+    height: 450px;
+    margin-top: 40px;
+    align-self: center;
+}
+
+.cuadros-d {
+    background-color: rgba(54, 7, 98, 0.276);
+    margin-bottom: 100px;
+}
+
+.nombre-d {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    color: white;
+    text-align: left;
+    margin-left: 50px;
+    letter-spacing: 5px;
+}
+
+.maind {
+    padding: 0px 150px;
+}
+
+.fondo {
+    background-image: url(../img/fondo2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.videodetalles {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.video {
+    align-self: center;
+    margin-top: 60px;
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 40px;
+
+    background-color: rgba(128, 128, 128, 0.315);
+}
+
+.informacion {
+    background-color: rgba(128, 128, 128, 0.315);
+    line-height: 25px;
+    margin-right: 40px;
+}
+
+.h2_dg {
+    font-size: 40px;
+    margin-top: 80px;
+    color: white;
+    margin-left: 40px;
+}
+
+.lista_dg {
+    display: flex;
+    justify-content: space-around;
+
+    width: 100%;
+    padding-left: 10px;
+    margin-top: 50px;
+}
+
+.agrf {
+    color: white;
+    text-decoration: none;
+    background-color: rgba(54, 7, 98, 0.642);
+    padding: 5px;
+}
+
+.seccion_dg {
+    height: 550px;
+}
+
+
+
+
+/* Css Favorite */
+
+h1.titulofav {
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    color: rgb(251, 249, 249);
+    text-align: left;
+    margin-top: 80px;
+
+
+}
+
+.lista_favoritos {
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    width: 100%;
+    padding: 0px;
+    background-size: cover;
+    margin-top: 30px;
+
+}
+
+.lista_favoritos2 {
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    width: 100%;
+    padding: 0px;
+    margin-top: 80px;
+    margin-bottom: 70px;
+}
+
+.fondofav {
+    background-image: url(../img/fondo\ dm.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+}
+
+.listaFavs {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* VER COMO CAMBIAR LA FONT DE LOS TEXTOS DE DETALLES DE PELICULAS */
+
+
+
+
+/* Pagina resultado de busqueda*/
+
+.body_result {
+    background-color: rgb(15, 9, 19);
+    font-family: 'Overpass', sans-serif;
+}
+
+
+.h1res_busq {
+    font-size: 40px;
+    color: white;
+    padding: 0px;
+    text-align: start;
+    margin: 0px;
+}
+
+.article_plataformas {
+    display: flex;
+    flex-direction: column;
+}
+
+.h2resbusq {
+    color: white;
+    margin-left: 10px;
+    background-color: rgba(128, 128, 128, 0.139);
+    padding: 10px;
+    margin-top: 50px;
+}
+
+.proveedoresh3 {
+    margin-left: 40px;
+}
+
+.generosboton {
+    color: rgb(117, 117, 205);
+}
+
+.h3_secciones_res_busq {
+    font-size: 25px;
+    color: white;
+    font-family: 'Overpass', sans-serif;
+
+}
+
+.h2nohaygenero {
+    color: white;
+
+}
+
+/* generos */
+.sectiongeneral {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.genero {
+    color: white;
+    background-color: rgba(100, 88, 112, 0.642);
+    width: 11vw;
+    height: 30vh;
+    margin: 40px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.vermasgeneros {
+    align-self: center;
+    margin-bottom: 30px;
+
+
+}
+
+.ulverrecomendaciones {
+    display: none;
+}
+
+.h2generos {
+    text-align: center;
+    color: rgb(180, 173, 173);
+    font-size: 20px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    margin-top: 30px;
+}
+
+.bodygeneros {
+    background-color: rgb(15, 9, 19);
+}
+
+.h1principalgeneros {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+}
+
+.iconos {
+    height: 200px;
+    width: 200px;
+    padding-left: 70px;
+
+}
+
+.botonfav {
+    background-color: rgba(70, 5, 135, 0.913);
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+
+
+}
+
+.lifav {
+    margin-top: 20px;
+}
+
+.listaFavs {
+    display: flex;
+    /*flex-direction: column;*/
+    margin-left: 30px;
+    margin-right: 950px;
+}
+
+.lifav {
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+@media(max-width: 420px) {
+    .header {
+        display: flex;
+        height: 300px;
+        background-color: rgb(0, 0, 1);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav_header {
+        display: flex;
+        width: 100%;
+        height: 150px;
+        background-color: rgb(54, 7, 98);
+        align-self: flex-end;
+    }
+
+    .lista_nav_header {
+        width: 100%;
+        display: flex;
+        list-style-type: none;
+        justify-content: space-evenly;
+        color: white;
+        padding: 0px;
+        font-size: 20px;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .lista_principal {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        width: 100%;
+        flex-direction: column;
+        padding: 0px;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .lista_anidada {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .seccion_peliculas {
+        height: 2050px;
+    }
+
+    .vermas {
+        background-color: rgb(54, 7, 98);
+        padding: 8px;
+        color: white;
+        text-decoration: none;
+        margin-top: 10px;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .seccion_series {
+        height: 2120px;
+    }
+
+    .seccion_lo_mas_visto {
+        height: 2100px;
+    }
+
+
+
+    .lista_footer {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    .seccion_foto_principal {
+        background-image: url(../img/fondo\ home\ mas\ oscura.png);
+        background-size: 1500px;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: bottom;
+        height: 550px;
+        width: 100%;
+        display: flex;
+        display: none;
+    }
+
+    .h2_secciones {
+        color: white;
+        margin-top: 50px;
+    }
+
+    main {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .titulod {
+        font-family: 'Raleway', sans-serif;
+        font-size: 30px;
+        color: white;
+        text-align: center;
+        background-color: rgba(54, 7, 98, 0.642);
+        margin-top: 120px;
+    }
+
+    .video {
+        width: 100%;
+        height: 220px;
+
+    }
+
+    .flex {
+        display: flex;
+        width: 100%;
+        height: 100px;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 40px;
+        background-color: rgba(128, 128, 128, 0.315);
+        font-size: 18px;
+    }
+
+
+    .h2resbusq {
+        color: white;
+        margin-left: 10px;
+        background-color: rgba(128, 128, 128, 0.139);
+        padding: 10px;
+        margin-top: 120px;
+    }
+
+    .lista_principal {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        width: 100%;
+        flex-direction: column;
+        padding: 0px;
+        align-items: center;
+        margin-top: 0px;
+    }
+}
+
+.ulverrecomendacionesSeries {
+    display: none;
+}
+
+.h2_dg {
+    font-size: 30px;
+    margin-top: 100px;
+    color: white;
+    margin-left: 20px;
+}
+
+.lista_dg {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-left: 10px;
+    margin-top: 50px;
+    flex-direction: row;
+}
+
+.h2_dg {
+    font-size: 30px;
+    margin-top: 100px;
+    color: white;
+    margin-left: 20px;
+}
+
+
+
+.maind {
+    padding: 30px 15px;
+}
+
+.informacion {
+    background-color: rgba(128, 128, 128, 0.315);
+    line-height: 25px;
+    margin-right: 40px;
+    font-size: 15px;
+}
+
+
+.lista_favoritos {
+    padding: 30px 15px;
+    display: block;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.lista_anidada {
+    margin: 30px;
+}
+
+.titulofav {
+    margin-left: 10px;
+    padding-top: 30px;
+
+}
+
+.h2fav {
+    margin-left: 10px;
+    font-size: 40px;
+}
+
+
+
+.lista_favoritos2 {
+    padding: 30px 15px;
+    display: block;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.h1principalgeneros {
+    margin-block: 30px;
+    padding-top: 70px;
+}
+
+.genero {
+    padding-left: 1px;
+    margin-bottom: 30px;
+    justify-content: center;
+    margin-top: 50px;
+    flex-direction: column;
+
+}
+
+.sectiongeneral {
+    padding-top: 0px;
+    display: flex;
+    align-items: center;
+}
+
+
+.iconos {
+    align-items: center;
+}
+
+
+.seccionTrailer {
+    display: flex;
+    flex-direction: column;
+}
+
+.cadapelifav {
+    width: 16%;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.nohayresenas{
+    color: white;  
+}
