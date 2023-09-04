@@ -40,7 +40,7 @@ export default class Home extends Component {
     return (
       <>
       //Peliculas
-      <h2 class="h2_secciones .uk-animation-slide-left-small"> Películas</h2>
+      <h2 class="h2_secciones .uk-animation-slide-left-small"> Populares</h2>
       <PeliculasContainer titulos={this.state.populares}/>
 
     //top rated

@@ -7,7 +7,7 @@ export default function Footer() {
     <div className="footer">
         
     <article className="logo footer">
-      <img className="logofooter" src="../Footer../public/./img/logoFooter.png" alt="logo footer"/>
+      <img className="logofooter" src="./logoFooter.png" alt="logo footer"/>
     </article>
 
     <article className="nombres_footer">

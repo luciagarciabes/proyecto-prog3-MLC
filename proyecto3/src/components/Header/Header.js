@@ -21,7 +21,9 @@ export default function Header() {
         <ul className="lista_nav_header">
           <li> <a className="linavheader" href="./index.html"> Home </a> </li>
           <li> <a className="linavheader" href="./favorite.html"> Mis Favoritos</a> </li>
-          <li> <a className="linavheader" href="./ genres.html"> Géneros</a> </li>
+          <li> <a className="linavheader" href="./ genres.html"> Populares</a> </li>
+          <li> <a className="linavheader" href="./ genres.html"> Top Rated</a> </li>
+
 
         </ul>
       </nav>
