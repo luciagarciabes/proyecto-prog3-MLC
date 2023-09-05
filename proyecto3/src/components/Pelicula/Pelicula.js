@@ -40,8 +40,8 @@ export default class Pelicula extends Component {
           <button className="vermas" onClick= {()=> this.validacion()}> {this.state.ver}</button>
           <li className="vermas">  <Link className="vermas"to={`/detalle/id/${this.props.id}`}> Ir a detalle</Link> </li>
           
-          <li className="vermas"> Agregar a favoritos </li>
-          
+          <button href="#" className="vermas">Agregar a Favoritos</button>
+     
 
       </ul>
       
