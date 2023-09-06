@@ -39,17 +39,16 @@ export default class Home extends Component {
 
     return (
       <>
-      //Peliculas
-      <h2 class="h2_secciones .uk-animation-slide-left-small"> Populares</h2>
+      //Populares
+      <h2 className="h2_secciones .uk-animation-slide-left-small"> Populares</h2>
       <PeliculasContainer titulos={this.state.populares}/>
 
+      <div className="separador"></div>
+
     //top rated
-    <h2 class="h2_secciones .uk-animation-slide-left-small"> Top Rated</h2>
+    <h2 className="h2_secciones .uk-animation-slide-left-small"> Top Rated</h2>
     <PeliculasContainer titulos={this.state.topRated}/>
    
-     
-
-
       </>
     )
   }

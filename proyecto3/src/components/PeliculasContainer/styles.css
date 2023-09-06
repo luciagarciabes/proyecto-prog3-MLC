@@ -1,0 +1,7 @@
+.lista_principal.lista_principal_peliculas{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
