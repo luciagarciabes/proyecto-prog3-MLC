@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import {options} from "../../utils/constants"
 import PeliculasContainer from '../../components/PeliculasContainer/PeliculasContainer'
+import Form from "../../components/Form/Form"
+import "./styles.css"
 
 export default class Popular extends Component {
   constructor(props){
@@ -33,16 +35,24 @@ export default class Popular extends Component {
   }
 
   //ACA VA METODO FILTER
+  filtrarPeliculas(nombre)  {
+    let peliculasFiltradas= this.state.backup.filter((elm)=>elm.title.toLowerCase().includes(nombre.toLowerCase()))
+    this.setState({
+      dataPelicula: peliculasFiltradas
+    })
+  }
   
   render() {
     return (
       <>
       <h2 className="h2_secciones .uk-animation-slide-left-small"> Populares</h2>
+      <Form categoria="popular" filtrarPeliculas={(busqueda)=> this.filtrarPeliculas(busqueda)}/>
       
       <PeliculasContainer titulos={this.state.dataPelicula}/>
-      <button className="vermas" onClick={() => this.mostrarMasPeliculas()}>
+      <button className=" botonvermas" onClick={() => this.mostrarMasPeliculas()}>
         Mostrar más
       </button>
+      <div className="separador"></div>
       </>
     )
   }

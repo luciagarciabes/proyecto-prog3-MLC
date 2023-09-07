@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
 import {options} from "../../utils/constants"
 import PeliculasContainer from '../../components/PeliculasContainer/PeliculasContainer'
+import FormHome from "../../components/FormHome/FormHome"
+import { Link } from 'react-router-dom'
+import "./styles.css"
 
 export default class Home extends Component {
     constructor(props){
         super(props)
         this.state= {
             populares: [],
-            topRated: []
+            topRated: [],
+            dataBusqueda: []
         }
     }
     
@@ -32,6 +36,16 @@ export default class Home extends Component {
         .catch(error => console.log(error))
 
     }
+
+    //fetch de filtrar peliculas
+    filtrarPeliculas(input){
+        fetch(`https://api.themoviedb.org/3/search/movie?query=${input}&include_adult=false&language=en-US&page=1`, options)
+        .then(resp => resp.json())
+        .then(data => this.setState({
+          dataBusqueda: data.results
+        }))
+        .catch(err => console.log(err))
+    }
     
 
 
@@ -39,15 +53,21 @@ export default class Home extends Component {
 
     return (
       <>
-      //Populares
-      <h2 className="h2_secciones .uk-animation-slide-left-small"> Populares</h2>
-      <PeliculasContainer titulos={this.state.populares}/>
+      <FormHome  filtrarPeliculas={(input) => this.filtrarPeliculas(input)}/>
+      
+        {
+            this.state.dataBusqueda.length === 0 ? 
+                <>
+             <Link className="linkhome" to="/Popular"> Ver todas las populares </Link>
+             <PeliculasContainer  titulos={this.state.populares} nombreSeccion="Populares"/>
+             <br/>  <br/>  <br/>
+             <Link className="linkhome"  to="/TopRated"> Ver todas las Top Rated </Link>
+             <PeliculasContainer titulos={this.state.topRated} nombreSeccion="Top Rated"/> </>
+              :
+             <PeliculasContainer titulos={this.state.dataBusqueda} nombreSeccion="Resultado de búsqueda"/>
+   
+        }
 
-      <div className="separador"></div>
-
-    //top rated
-    <h2 className="h2_secciones .uk-animation-slide-left-small"> Top Rated</h2>
-    <PeliculasContainer titulos={this.state.topRated}/>
    
       </>
     )

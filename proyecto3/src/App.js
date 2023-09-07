@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer.js"
 import Home from "./screens/Home/index.js"
 import NotFound from "./screens/NotFound/index.js"
 import Popular from "./screens/Popular/index.js";
+import TopRated from "./screens/TopRated/index.js"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
     <Switch>
       <Route path="/" exact={true} component={Home}/>
       <Route path="/Popular" component={Popular} />
+      <Route path="/TopRated" component={TopRated} />
       <Route component={NotFound}/>
       
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import "./styles.css"
 
 export default class Form extends Component {
     constructor(props){
@@ -26,8 +27,8 @@ export default class Form extends Component {
         <input onChange={(evento) => this.guardarValor(evento)} className="inputform" type="text" name="busqueda" value={this.state.input} placeholder=" Escriba un título..."/>
         {
             this.props.categoria === "popular" ? 
-            <button className="botonform">Buscar peliculas populares</button> :
-            <button className="botonform">Buscar peliculas Top Rated</button>
+            <button className="botonform">Buscar Populares</button> :
+            <button className="botonform">Buscar Top Rated</button>
         }
         </form>
     )

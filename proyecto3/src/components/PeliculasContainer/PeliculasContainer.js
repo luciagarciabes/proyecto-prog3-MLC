@@ -15,6 +15,7 @@ export default class PeliculasContainer extends Component {
     return (
       <>
       <section className="seccion_peliculas  .uk-animation-toggle" tabindex="0">
+      <h2 className="h2_secciones .uk-animation-slide-left-small"> {this.props.nombreSeccion}</h2>
       <ul className="lista_principal lista_principal_peliculas">
         {this.props.titulos.map((elm)=> <Pelicula 
          key={elm.title + elm.id}
@@ -25,6 +26,7 @@ export default class PeliculasContainer extends Component {
          />)}
 
       </ul>
+      <div className="separador"></div>
 
     </section>
 
