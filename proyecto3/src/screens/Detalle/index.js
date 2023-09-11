@@ -18,11 +18,43 @@ export default class detalle extends Component {
         .then(data => { this.setState({
             dataPelicula: data, 
             generos: data.genres
-        })})
+        }) })
         .catch(err => console.log(err))
+        console.log(this.state.dataPelicula);
+    }
+
+    agregarFav(idPelicula){
+        let storageFav= localStorage.getItem("Favoritos")
+        if (storageFav === null){
+            let arrayIds= [idPelicula]
+            let arrStringuifeado= JSON.stringify(arrayIds)
+            localStorage.setItem("Favoritos", arrStringuifeado)
+        }else {
+            let arrParseado= JSON.parse(storageFav)
+            arrParseado.push(idPelicula)
+            let arrStringuifeado= JSON.stringify(arrParseado)
+            localStorage.setItem("Favoritos", arrStringuifeado)
+
+        }
+        this.setState({
+            esFav: true
+        })
+    }
+
+
+    sacarFav(idPelicula){
+        let storageFav= localStorage.getItem("Favoritos")
+        let arrParseado= JSON.parse(storageFav)
+        let favFiltrados= arrParseado.filter((id) => id !== idPelicula)
+        let arrStringuifeado= JSON.stringify(favFiltrados)
+        localStorage.setItem("Favoritos", arrStringuifeado)
+        this.setState({
+            esFav: false
+        })
     }
     
   render() {
+    
     return (
         <>
         {
@@ -31,6 +63,7 @@ export default class detalle extends Component {
                 <div> Trayendo peliculas </div>
             </div>
             :
+           
             <section className="cuadros-d">
                 <article className="videodetalles">
                     <img className="img-detalle-titulos" src={`https://image.tmdb.org/t/p/w500/`+this.state.dataPelicula.poster_path} alt={this.state.dataPelicula.title}/>
@@ -51,8 +84,17 @@ export default class detalle extends Component {
 
                             <li className="informacion sinopsis">{this.state.dataPelicula.overview}</li>
                         
-                            <li className="informacion generos"> {this.state.dataPelicula.genres.title} </li>
-                            <button className="vermas">Agregar a Favoritos</button>
+                            <li className="informacion generos">Generos:  {this.state.dataPelicula.genres.map(elm => elm.name + "   ")} </li>
+                            <br/>
+                            {
+                                this.state.esFav ?
+                                <button onClick={()=> this.sacarFav(this.state.dataPelicula.id)} className="vermas">Sacar de Favoritos</button>
+                                :
+                                 <button onClick={()=> this.agregarFav(this.state.dataPelicula.id)} className="vermas">Agregar a Favoritos</button>
+                            }
+
+
+                            
                             </ul>
 
                             

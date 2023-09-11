@@ -12,6 +12,7 @@ export default class Pelicula extends Component {
         }
     }
 
+
     validacion (){
       if(this.state.clase=== "Ocultar"){
         this.setState({
