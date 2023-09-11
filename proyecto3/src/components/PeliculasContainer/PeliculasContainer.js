@@ -19,6 +19,7 @@ export default class PeliculasContainer extends Component {
       <ul className="lista_principal lista_principal_peliculas">
         {this.props.titulos.map((elm)=> <Pelicula 
          key={elm.title + elm.id}
+         id= {elm.id}
          titulo={elm.title}
          imagen={"https://image.tmdb.org/t/p/w500" + elm.poster_path}
          descripcion= {elm.overview}

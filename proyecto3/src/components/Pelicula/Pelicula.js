@@ -38,7 +38,7 @@ export default class Pelicula extends Component {
           <br/>
           <li className={`li_piedefoto ${this.state.clase}`}> {this.props.descripcion} </li>
           <button className="vermas" onClick= {()=> this.validacion()}> {this.state.ver}</button>
-          <li className="vermas">  <Link className="vermas"to={`/detalle/id/${this.props.id}`}> Ir a detalle</Link> </li>
+          <li className="vermas">  <Link className="vermas"to={`/Detalle/${this.props.id}`}> Ir a detalle</Link> </li>
           
           <button className="vermas">Agregar a Favoritos</button>
      

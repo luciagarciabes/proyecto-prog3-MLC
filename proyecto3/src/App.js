@@ -6,6 +6,7 @@ import Home from "./screens/Home/index.js"
 import NotFound from "./screens/NotFound/index.js"
 import Popular from "./screens/Popular/index.js";
 import TopRated from "./screens/TopRated/index.js"
+import Detalle from "./screens/Detalle/index.js";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/" exact={true} component={Home}/>
       <Route path="/Popular" component={Popular} />
       <Route path="/TopRated" component={TopRated} />
+      <Route path="/Detalle/:id" component={Detalle}/> 
       <Route component={NotFound}/>
       
 
