@@ -7,10 +7,25 @@ export default class Pelicula extends Component {
         super(props)
         this.state={
           clase: "Ocultar",
-          ver: "Ver mas"
+          ver: "Ver mas",
+          esFav: false
 
         }
     }
+
+    componentDidMount() {
+      let storageFav= localStorage.getItem("Favoritos")
+      let arrParseado= JSON.parse(storageFav)
+
+      if (arrParseado !== null){
+        let esFav= arrParseado.includes(this.props.id)
+
+        if (esFav){
+          this.setState({
+            esFav: true
+          })
+        }
+      } }
 
 
     validacion (){
@@ -27,6 +42,43 @@ export default class Pelicula extends Component {
       }
     }
 
+
+    agregarFav(idPelicula){
+      let storageFav= localStorage.getItem("Favoritos")
+      if(storageFav=== null) {
+        let arrIds= [idPelicula]
+        let arrStringuifeado = JSON.stringify(arrIds)
+        localStorage.setItem("Favoritos", arrStringuifeado)
+      } else {
+        let arrParseado= JSON.parse(storageFav)
+        arrParseado.push(idPelicula)
+        let arrStringuifeado= JSON.stringify(arrParseado)
+        localStorage.setItem("Favoritos", arrStringuifeado)
+      }
+
+      this.setState({
+        esFav: true
+      })
+    }
+
+    sacarFav(idPelicula){
+      let storageFav= localStorage.getItem("Favoritos")
+      let arrParseado= JSON.parse(storageFav)
+      let favFiltrados= arrParseado.filter((id)=> id !== idPelicula)
+      let arrStringuifeado= JSON.stringify(favFiltrados)
+      localStorage.setItem("Favoritos", arrStringuifeado)
+
+      if (this.props.actualizarState !== false){
+        this.props.actualizarState(idPelicula)
+        return
+      }
+
+      this.setState({
+        esFav: false
+      })
+
+    }
+
     
   render() {
     return (
@@ -41,7 +93,13 @@ export default class Pelicula extends Component {
           <button className="vermas" onClick= {()=> this.validacion()}> {this.state.ver}</button>
           <li className="vermas">  <Link className="vermas"to={`/Detalle/${this.props.id}`}> Ir a detalle</Link> </li>
           
-          <button className="vermas">Agregar a Favoritos</button>
+        {
+          this.state.esFav ? 
+          <button  onClick={ () => this.sacarFav(this.props.id)}  className="vermas"> Sacar de Favoritos</button>:
+          <button  onClick={ () => this.agregarFav(this.props.id)}  className="vermas"> Agregar a Favoritos</button>
+          
+        }
+          
      
 
       </ul>

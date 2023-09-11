@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {options} from "../../utils/constants"
 import PeliculasContainer from '../../components/PeliculasContainer/PeliculasContainer'
+import "./styles.css"
 
 
 export default class Favoritos extends Component {
@@ -41,7 +42,9 @@ export default class Favoritos extends Component {
         <>
         {
             this.state.favoritos.length === 0 ?
+            <section className="seccionFavoritos">
             <h1 className="h2_secciones"> Todavía no tiene peliculas en favoritos</h1>
+            </section>
             :
             <PeliculasContainer actulizarState={(id)=> this.actulizarState(id)} nombreSeccion= "Favoritos" titulos={this.state.favoritos}/>
 
