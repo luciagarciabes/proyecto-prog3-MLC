@@ -28,5 +28,35 @@
     .lista_principal {
         margin-right: 105px;
     }
-    
+    .vermas{
+        width: 100px;
+    }
+    .logofooter{
+        visibility: hidden;
+    }
+    .img-logo-tmbd{
+        visibility: hidden;
+    }
+    .separador{
+        visibility: hidden;
+    }
+    .li_piedefoto {
+        color: white;
+        width: 150px;
+        font-size: 15px;
+    }
+    .lista_footer {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        margin-right: 240px;
+    }
+    .linombresfooter{
+        width: 80px;
+        font-size: 15px;
+        visibility: hidden;
+    }
+    .seccion_peliculas {
+         height: 3250px; 
+    }
 }
