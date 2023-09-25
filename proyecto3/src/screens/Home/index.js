@@ -17,7 +17,7 @@ export default class Home extends Component {
     
       
     componentDidMount(){
-        //fetch de peliculas
+        //fetch de populares
         fetch("https://api.themoviedb.org/3/discover/movie", options)
         .then(response => response.json())
         .then(data => {

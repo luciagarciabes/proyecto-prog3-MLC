@@ -18,7 +18,7 @@ export default class Pelicula extends Component {
       let arrParseado= JSON.parse(storageFav)
 
       if (arrParseado !== null){
-        let esFav= arrParseado.includes(this.props.id)
+        let esFav= arrParseado.includes(this.props.id) // viene por props del map de peliculas container 
 
         if (esFav){
           this.setState({
@@ -68,7 +68,7 @@ export default class Pelicula extends Component {
       let arrStringuifeado= JSON.stringify(favFiltrados)
       localStorage.setItem("Favoritos", arrStringuifeado)
 
-      if (this.props.actualizarState !== false){  //no entiendo esto
+      if (this.props.actualizarState !== false){  //si viene el actualizar state por props (si esta en favoritos), ejectuta     Actualizarstate() que lo saca del estado para que lo deje de renderizar
         this.props.actualizarState(idPelicula)
         return
       }
@@ -81,8 +81,8 @@ export default class Pelicula extends Component {
 
     
   render() {
-    return (
-      <li className="cada_titulo">
+    return (  // las props vienen todas el container 
+      <li className="cada_titulo">  
       
       <img className="imagenes_home" src={this.props.imagen} alt={this.props.imagen}
           height="250px"/>
@@ -95,7 +95,7 @@ export default class Pelicula extends Component {
           
         {
           this.state.esFav ? 
-          <button  onClick={ () => this.sacarFav(this.props.id)}  className="vermas"> Sacar de Favoritos</button>:
+          <button  onClick={ () => this.sacarFav(this.props.id)}  className="vermas"> Sacar de Favoritos</button>  :
           <button  onClick={ () => this.agregarFav(this.props.id)}  className="vermas"> Agregar a Favoritos</button>
           
         }

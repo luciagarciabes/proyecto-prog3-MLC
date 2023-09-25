@@ -4,9 +4,8 @@ class FormHome extends Component{
     constructor(props){
         super(props)
         this.state = {
-            input: '',
-            dataPelicula:[],
-            backup:[]
+            input: ''
+            
         }
     }
 

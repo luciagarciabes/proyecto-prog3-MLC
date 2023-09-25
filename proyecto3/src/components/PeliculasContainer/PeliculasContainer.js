@@ -17,10 +17,10 @@ export default class PeliculasContainer extends Component {
       <>
   
       <section className="seccion_peliculas  .uk-animation-toggle" tabindex="0">
-      <h2 className="h2_secciones .uk-animation-slide-left-small"> {this.props.nombreSeccion}</h2>
+      <h2 className="h2_secciones .uk-animation-slide-left-small"> {this.props.nombreSeccion}</h2> //esta props viene desde las screens
       <ul className="lista_principal lista_principal_peliculas">
         {
-        this.props.titulos.length ===0 ?
+        this.props.titulos.length ===0 ?   //titulos es array de peliculas
           <Loader/>
           :
         this.props.titulos.map((elm)=> <Pelicula 
@@ -29,8 +29,8 @@ export default class PeliculasContainer extends Component {
          titulo={elm.title}
          imagen={"https://image.tmdb.org/t/p/w500" + elm.poster_path}
          descripcion= {elm.overview}
-         actualizarState= {this.props.actulizarState ? (id)=> this.props.actulizarState(id) :  //WHAT
-          false}
+         actualizarState= {this.props.actulizarState ? (id)=> this.props.actulizarState(id) :  //solo viene si el componenete esta en favoritos 
+          false} 
          />)
          
          }

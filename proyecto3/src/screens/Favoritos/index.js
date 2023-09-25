@@ -16,7 +16,7 @@ export default class Favoritos extends Component {
         let storageFav= localStorage.getItem("Favoritos");
         if(storageFav !== null){
             let favsParseados= JSON.parse(storageFav)
-            Promise.all(
+            Promise.all(  //array de fetchs 
                 favsParseados.map(id => 
                     fetch("https://api.themoviedb.org/3/movie/" + id, options)
                     .then(res => res.json()))
@@ -29,7 +29,7 @@ export default class Favoritos extends Component {
         }
     }
 
-    actulizarState(id){
+    actulizarState(id){  //para sacar la pelicula de favoritos cuando aprieto "sacar de favoritos" de la vista
         let stateActualizado= this.state.favoritos.filter((elm)=> elm.id !== id )
         this.setState({
             favoritos: stateActualizado

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { options } from "../../utils/constants"
 import { Link } from 'react-router-dom'
 import "./styles.css";
+import Loader from '../../components/Loader/Loader';
 
 export default class detalle extends Component {
     constructor(props){
@@ -13,11 +14,10 @@ export default class detalle extends Component {
     }
 
     componentDidMount(){
-        fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}`, options)
+        fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}`, options)  //.match.params contiene la info que viaja por la ruta parametrizada
         .then(res => res.json())
         .then(data => { this.setState({
-            dataPelicula: data, 
-            generos: data.genres
+            dataPelicula: data
         }) })
         .catch(err => console.log(err))
         console.log(this.state.dataPelicula);
@@ -60,7 +60,7 @@ export default class detalle extends Component {
         {
             this.state.dataPelicula === null ?
             <div className="container">
-                <div> Trayendo peliculas </div>
+               <Loader/>
             </div>
             :
            
