@@ -29,7 +29,7 @@ export default class PeliculasContainer extends Component {
          titulo={elm.title}
          imagen={"https://image.tmdb.org/t/p/w500" + elm.poster_path}
          descripcion= {elm.overview}
-         actualizarState= {this.props.actulizarState ? (id)=> this.props.actulizarState(id) :
+         actualizarState= {this.props.actulizarState ? (id)=> this.props.actulizarState(id) :  //WHAT
           false}
          />)
          

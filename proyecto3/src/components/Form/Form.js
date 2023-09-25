@@ -17,7 +17,7 @@ export default class Form extends Component {
         this.setState({
             input: evento.target.value
         },
-        () => this.props.filtrarPeliculas(this.state.input)
+        () => this.props.filtrarPeliculas(this.state.input) // duda con esto, de dónde sale?
         )
     }
 
