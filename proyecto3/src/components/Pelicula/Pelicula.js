@@ -68,7 +68,7 @@ export default class Pelicula extends Component {
       let arrStringuifeado= JSON.stringify(favFiltrados)
       localStorage.setItem("Favoritos", arrStringuifeado)
 
-      if (this.props.actualizarState !== false){  //si viene el actualizar state por props (si esta en favoritos), ejectuta     Actualizarstate() que lo saca del estado para que lo deje de renderizar
+      if (this.props.actualizarState !== false){  //si viene el actualizar state por props (si esta en favoritos), ejectuta Actualizarstate() que lo saca del estado para que lo deje de renderizar
         this.props.actualizarState(idPelicula)
         return
       }
